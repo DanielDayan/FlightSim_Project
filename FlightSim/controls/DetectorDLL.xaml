@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="FlightSim.controls.DetectorDLL"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSim.controls"
+             mc:Ignorable="d" >
+    <Grid Height="154" Width="185">
+        <TextBlock Text="Choose Anomaly Detector dll:" Margin="4,0,-4,106"></TextBlock>
+        <ComboBox x:Name="SelectedBox" Margin="0,22,0,106">
+            <ComboBoxItem Selected="LinearSelected">Linear Regression Detector</ComboBoxItem>
+            <ComboBoxItem Selected="CircleSelected"> Minimum Circle Detector</ComboBoxItem>
+            <ComboBoxItem Selected="LoadDllSelected">Upload your own DLL Detector</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Text="Anomalies Detected :" Margin="4,53,34,82"></TextBlock>
+        <StackPanel HorizontalAlignment="Left" Height="77" Margin="0,77,0,0" VerticalAlignment="Top" Width="185">
+            <ListBox x:Name="anomaly_List" HorizontalAlignment="Left" Height="76" Width="184" Margin="1,0,-0.2,0" FontSize="8" FontStyle="Italic"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="FlightSim.controls.VideoController"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSim.controls" xmlns:flightsim="clr-namespace:FlightSim" d:DataContext="{d:DesignInstance Type=flightsim:VideoViewModel}"
+             mc:Ignorable="d" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Canvas Margin="3,3,-3,65" Background="Silver" Width="800" Height="50">
+
+        <Button x:Name="___upload_CSV_" Content="Upload CSV File" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="112" Grid.RowSpan="3" Click="upload_CSV_Click" Canvas.Left="118" Canvas.Top="6"/>
+        <Button x:Name="___upload_XML_" Content="Upload XML File" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="112" Grid.RowSpan="3" Grid.ColumnSpan="2" Click="___upload_XML__Click" Canvas.Left="235" Canvas.Top="6"/>
+        <Button x:Name="Play_Button"  Command="{Binding VM_Play}" Content="Play" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="80" Click="Play_Button_Click" Grid.RowSpan="3" Grid.Column="1" Canvas.Left="366" Canvas.Top="6"/>
+        <Button x:Name="Pause_button" Command="{Binding VM_Pause}" Content="Pause" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="80" Click="Pause_button_Click" Grid.RowSpan="3" Grid.Column="1" Canvas.Left="462" Canvas.Top="6"/>
+        <Button x:Name="Stop_Button"  Command="{Binding VM_Stop}" Content="Stop" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="75" Click="Stop_Button_Click" Grid.RowSpan="3" Grid.Column="1" Canvas.Left="557" Canvas.Top="6"/>
+
+        <Slider x:Name="Slider_" 
+                    
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                  Width="614" Grid.ColumnSpan="2" Height="18" Grid.Row="2" 
+                    Minimum= "0"
+                    Maximum="{Binding VM_FlightLength}" 
+                    Value="{Binding VM_Index, Mode=TwoWay}"
+                    TickPlacement="BottomRight" 
+                    TickFrequency="1" 
+                     IsMoveToPointEnabled="True" 
+                     ValueChanged="Slider__ValueChanged" Canvas.Left="115" Canvas.Top="32" Background="#FFA09F9F"/>
+
+        <TextBox x:Name="Play_Speed" Text="1"  KeyDown="Play_Speed_TextChanged"  HorizontalAlignment="Left" Height="19" TextWrapping="Wrap"  VerticalAlignment="Top"  TextAlignment="Center" Width="29" Grid.Column="2" UndoLimit="3"
+                 ToolTipService.InitialShowDelay="0" 
+                    ToolTipService.ShowDuration="2000" 
+                        ToolTipService.BetweenShowDelay="10000" 
+                        ToolTip="Enter a number and press ENTER ." Grid.Row="2" RenderTransformOrigin="0.379,1.253" Canvas.Left="740" Canvas.Top="8"/>
+        <Label Content="Play Speed" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="70" Grid.Column="2" Grid.RowSpan="3" Canvas.Left="662" Canvas.Top="4"/>
+
+        <TextBlock x:Name="Txt_block" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" RenderTransformOrigin="-0.441,0.725" Canvas.Left="58" Canvas.Top="30"/>
+
+        <TextBlock HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" Text="{Binding VM_CurrentTime}" VerticalAlignment="Top" Canvas.Top="30" Canvas.Left="3"/>
+        <Label Content="/" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Height="35" Width="29" Canvas.Left="45" Canvas.Top="25"/>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="FlightSim.controls.Graphs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:oxy="http://oxyplot.codeplex.com"
+             xmlns:local="clr-namespace:FlightSim.controls" xmlns:flightsim="clr-namespace:FlightSim" xmlns:oxy1="http://oxyplot.org/wpf" d:DataContext="{d:DesignInstance Type=flightsim:GraphViewModel}"
+             mc:Ignorable="d" Height="300.8" Width="515.2">
+    <Grid>
+        <Grid Margin="0,10,0.2,-0.2" RenderTransformOrigin="0.728,0.64">
+            <Grid.RowDefinitions>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="60*"/>
+            </Grid.ColumnDefinitions>
+
+            <oxy1:PlotView x:Name="Plot1" Background="{x:Null}"  Model ="{Binding VM_GraphModel}" Margin="32,58,43.2,130" ClipToBounds="True" Width="140" Height="102.4"/>
+
+            <oxy1:PlotView x:Name="Pearson" Background="{x:Null}" Model="{Binding VM_PearsonGraph}"  Margin="185,59,190.2,130" ClipToBounds="True" Grid.ColumnSpan="2"/>
+
+
+
+
+            <oxy1:PlotView x:Name="LinearReg" Model ="{Binding VM_PointsGraph}" Margin="125.8,59,34.2,130" Background="{x:Null}" Grid.Column="1" Width="140"/>
+
+        </Grid>
+
+
+
+
+
+
+        <ComboBox x:Name="Var_select" ItemsSource="{Binding VM_Select, Mode=OneWay}" SelectionChanged="ComboBox_SelectionChanged" DropDownClosed="ComboBox_DropDownClosed"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="169" Margin="10,18,0,0" FontSize="14"/>
+
+
+
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="8,0,0,0" Text="Chose Variable " Height="33" Width="144"/>
+        <StackPanel HorizontalAlignment="Left" Height="73" Margin="191,0,0,0" VerticalAlignment="Top" Width="144">
+            <Label Content="Correlative variable:" Height="25" Margin="4,0,-7,0"/>
+            <TextBlock HorizontalAlignment="Left" Height="51" Margin="9,0,-10,0" TextWrapping="Wrap" Text="{Binding VM_CurrentCorrVar}" Width="145" Foreground="Red" FontSize="10"/>
+        </StackPanel>
+
+        <TextBlock Text="Linear Regression Graph" Margin="337,3,41.2,254.8"  ></TextBlock>
+    </Grid>
+</UserControl>
