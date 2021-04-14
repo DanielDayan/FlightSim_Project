@@ -59,7 +59,7 @@ for more information look source code .
 
 | Plugin | README |
 | ------ | ------ |
-| AnomalyDetectionDll |https://github.com/DanielDayan/FlightSimulator/Plugins/README.md |
+| AnomalyDetectionDll |https://github.com/DanielDayan/FlightSimulator_Project/FlightSim/Plugins/README.md |
 | OxyPlot | https://github.com/oxyplot/oxyplot/blob/develop/README.md
 
 
