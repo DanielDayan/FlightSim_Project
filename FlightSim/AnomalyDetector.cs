@@ -210,6 +210,10 @@ namespace FlightSim
             DetectAnomalies(1);
             return this.ar;
         }
+        public List<AnomalyReport> getList()
+        {
+            return this.ar;
+        }
         public bool isSimpleDetectorRunning()
         {
             return this.is_SimpleDetector;

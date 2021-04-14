@@ -184,7 +184,7 @@ namespace FlightSim
                         //CircleGraph = pm.DrawCircle(index, speed, currentGraphVar, currentCorrVar);
                         // linear detector
                         if (detector.isSimpleDetectorRunning())
-                            AddPointsToLinearGraph(this.detector.getLinearList());
+                            AddPointsToLinearGraph(this.detector.getList());
                       
                         NotifyPropertyChanged("LineSeries");
                         
