@@ -87,7 +87,8 @@ End
 
 # UML Diagram 
 
-![alt text](https://github.com/DanielDayan/FlightSimulator/blob/66573838ca54c620fc323d2e0addd80421d36695/UML.png)
+![UML](https://user-images.githubusercontent.com/64739791/128872717-73914d5c-49b3-4bf8-90e3-873819c67d30.png)
+
 
 # Video 
 
